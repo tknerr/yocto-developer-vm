@@ -1,20 +1,11 @@
 
-# Linux Developer VM Example / Template
+# Yocto Developer VM
 
-[![Circle CI](https://circleci.com/gh/Zuehlke/linux-developer-vm-with-ansible/tree/master.svg?style=shield)](https://circleci.com/gh/Zuehlke/linux-developer-vm-with-ansible/tree/master)
+[![Circle CI](https://circleci.com/gh/tknerr/yocto-developer-vm/tree/master.svg?style=shield)](https://circleci.com/gh/tknerr/yocto-developer-vm/tree/master)
 
-A minimal example / template project for an Ansible-managed Linux Developer VM.
+Ansible-managed Linux Developer VM for the Yocto Training / Workshop, based on https://github.com/Zuehlke/linux-developer-vm-with-ansible.
 
-![Linux Developer VM Screenshot](https://user-images.githubusercontent.com/365744/79437115-0b707300-7fd2-11ea-964f-0b5a0ff36d05.png)
-
-It's meant to be copy/pasted and filled with life. The `roles/` directory contains the roles
-for setting up the VM, the `spec/` directory contains the tests that come along with it.
-All your specific customizations go in there!
-
-**NOTE: This is just a bare skeleton template project -- use it as a copy/paste template to kickstart your own developer VM and grow it to your needs**
-
-For the Chef-based equivalent of it, see https://github.com/Zuehlke/linux-developer-vm
-
+![Yocto Developer VM Screenshot](https://user-images.githubusercontent.com/365744/79437115-0b707300-7fd2-11ea-964f-0b5a0ff36d05.png)
 
 ## What's included?
 
@@ -40,7 +31,7 @@ Other tweaks and settings worth mentioning:
 
 The latest version of this developer VM can be downloaded as a VM image from here:
 
- * https://github.com/Zuehlke/linux-developer-vm-with-ansible/releases
+ * https://github.com/tknerr/yocto-developer-vm/releases
 
 After downloading the .ova file you can import it into VirtualBox via `File -> Import Appliance...`.
 Once imported, you can simply start the VM and log in:
@@ -63,7 +54,7 @@ You can run these commands from anywhere inside the developer VM:
 
 For further instructions, please refer to the README.md that is placed on the Desktop of the Developer VM:
 
-* https://github.com/Zuehlke/linux-developer-vm-with-ansible/blob/master/roles/readme/files/README.md
+* https://github.com/tknerr/yocto-developer-vm/blob/master/roles/readme/files/README.md
 
 
 ## Development

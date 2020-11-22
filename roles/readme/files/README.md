@@ -1,14 +1,14 @@
 # README
 
-Hi! Welcome to the "My Developer VM".
+Hi! Welcome to the "Yocto Developer VM".
 
 ## Overview
 
-This Developer VM provides the toolchains required to develop on "your project".
+This Developer VM provides the toolchains required to develop for the Yocto Training / Workshop.
 
 The latest version of the this VM can be downloaded here:
 
- * https://github.com/Zuehlke/linux-developer-vm-with-ansible/releases
+ * https://github.com/tknerr/yocto-developer-vm/releases
 
 ## Basic Usage and Setup
 

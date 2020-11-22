@@ -6,13 +6,13 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "0.1.0"
 
   # hostname
-  config.vm.hostname = 'dev-vm'
+  config.vm.hostname = 'yocto-dev-vm'
 
   # virtualbox specific customizations
   config.vm.provider "virtualbox" do |vbox, override|
-    vbox.name = "Linux Developer VM"
-    vbox.cpus = 4
-    vbox.memory = 4096
+    vbox.name = "Yocto Developer VM"
+    vbox.cpus = 8
+    vbox.memory = 8192
     vbox.customize ["modifyvm", :id, "--usb", "on"]
     vbox.customize ["modifyvm", :id, "--accelerate3d", "off"]
     vbox.customize ["modifyvm", :id, "--vrde", "off"]
@@ -20,9 +20,9 @@ Vagrant.configure("2") do |config|
 
   # vmware specific customizations
   config.vm.provider "vmware_desktop" do |vmware, override|
-    vmware.vmx["displayname"] = "Linux Developer VM"
-    vmware.vmx["numvcpus"] = "4"
-    vmware.vmx["memsize"] = "4096"
+    vmware.vmx["displayname"] = "Yocto Developer VM"
+    vmware.vmx["numvcpus"] = "8"
+    vmware.vmx["memsize"] = "8192"
     vmware.vmx["usb.present"] = "TRUE"
     vmware.vmx["usb.pcislotnumber"] = "33"
     vmware.vmx["usb_xhci.present"] = "TRUE"
