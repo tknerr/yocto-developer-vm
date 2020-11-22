@@ -12,4 +12,5 @@
     - { role: readme, tags: "readme" }
     - { role: ansible-lint, tags: "ansible-lint" }
     - { role: testinfra, tags: "testinfra" }
+    - { role: lab-setup, tags: "lab-setup" }
     - { role: vscode, tags: "vscode" }

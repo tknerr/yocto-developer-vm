@@ -1,0 +1,16 @@
+---
+
+- name: Install Prerequisites
+  apt:
+    package:
+      - bc
+      - build-essential
+      - chrpath
+      - cpio
+      - diffstat
+      - gawk
+      - git
+      - python3
+      - texinfo
+      - wget
+      - vim
