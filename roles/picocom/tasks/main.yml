@@ -1,0 +1,13 @@
+---
+
+- name: Install picocom
+  apt:
+    name: picocom
+    state: present
+
+- name: Add user to dialout group
+  user:
+    append: yes
+    groups:
+      - dialout
+    name: user

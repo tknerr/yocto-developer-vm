@@ -14,3 +14,4 @@
     - { role: testinfra, tags: "testinfra" }
     - { role: lab-setup, tags: "lab-setup" }
     - { role: vscode, tags: "vscode" }
+    - { role: picocom, tags: "picocom" }
