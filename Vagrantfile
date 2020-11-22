@@ -2,8 +2,8 @@
 Vagrant.configure("2") do |config|
 
   # basebox
-  config.vm.box = "tknerr/ubuntu2004-desktop"
-  config.vm.box_version = "0.1.0"
+  config.vm.box = 'tknerr/ubuntu2004-desktop'
+  config.vm.box_version = '1.0.0'
 
   # hostname
   config.vm.hostname = 'yocto-dev-vm'
