@@ -1,45 +1,45 @@
 
 # Yocto Developer VM
 
-[![Circle CI](https://circleci.com/gh/tknerr/yocto-developer-vm/tree/master.svg?style=shield)](https://circleci.com/gh/tknerr/yocto-developer-vm/tree/master)
+Ansible-managed Linux Developer VM for the [Yocto Training](https://bootlin.com/training/yocto) / Workshop, based on https://github.com/Zuehlke/linux-developer-vm-with-ansible.
 
-Ansible-managed Linux Developer VM for the Yocto Training / Workshop, based on https://github.com/Zuehlke/linux-developer-vm-with-ansible.
-
-![Yocto Developer VM Screenshot](https://user-images.githubusercontent.com/365744/79437115-0b707300-7fd2-11ea-964f-0b5a0ff36d05.png)
+![Yocto Developer VM Screenshot](https://user-images.githubusercontent.com/365744/100019526-7c84ce00-2dde-11eb-98ce-ad250d8ddf24.png)
 
 ## What's included?
 
 ### Main tools
 
-These are the main tools included in this developer VM (see CHANGELOG for the specific versions):
+These are the main tools included in this developer VM:
+
+ * [Toolchain](https://github.com/tknerr/yocto-developer-vm/blob/feature/yocto-dev-vm/roles/toolchain/tasks/main.yml) - basic toolchain with prerequisites for building yocto images
+ * [VSCode](https://github.com/microsoft/vscode) - a general purpose text editor
+ * [Picocom](https://github.com/npat-efault/picocom) - terminal emulator for grabbing the serial connection output
+
+Apart from the above, the following tools are used to set up and maintain this developer VM:
 
  * [Ansible](https://docs.ansible.com/ansible/latest/index.html) - for managing / installing this developer VM
  * [Ansible-lint](https://github.com/ansible/ansible-lint) - to ensure best practices when adding more Ansible roles
  * [TestInfra](https://testinfra.readthedocs.io/en/latest/) - for verifying that the developer VM is set up correctly
 
-### Tweaks and Settings
-
-Other tweaks and settings worth mentioning:
-
- * places a `README.md` file on the Desktop to guide first time users after they logged in to the VM
- * symlinks [`update-vm.sh`](scripts/update-vm.sh) to `/usr/local/bin/update-vm` so it's in the `$PATH` and can be used for updating the VM from the inside (see below)
-
-
 ## Usage
 
 ### Obtaining and Starting the VM Image
 
-The latest version of this developer VM can be downloaded as a VM image from here:
-
- * https://github.com/tknerr/yocto-developer-vm/releases
-
-After downloading the .ova file you can import it into VirtualBox via `File -> Import Appliance...`.
-Once imported, you can simply start the VM and log in:
+Simply run `vagrant up` in order to bring up the Yocto Developer VM (might take a while), then log in with:
 
  * username: "user"
  * password: "user"
 
 From then on just open a terminal and you will have all of the tools available (see "What's included?").
+
+### Labs and Exercises
+
+You can find the lab materials here (note: they are also available via `/vagrant/labs/content/` from within the VM:
+
+* the original [lab contents](https://github.com/tknerr/yocto-developer-vm/tree/feature/yocto-dev-vm/labs/content) (slides, exercises, lab material)
+* the [lab notes](https://github.com/tknerr/yocto-developer-vm/tree/feature/yocto-dev-vm/labs/notes) I have taken during the workshop
+
+*NOTE: Training materials are created by Bootlin and shared under [Creative Commons Attribution - Share Alike 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode) licencse. The sources for the training materials can be found at https://github.com/bootlin/training-materials/*
 
 ### Updating the VM
 
@@ -52,21 +52,21 @@ You can run these commands from anywhere inside the developer VM:
 
 ### Further Usage Instructions
 
-For further instructions, please refer to the README.md that is placed on the Desktop of the Developer VM:
+For general instructions, please refer to the README.md that is placed on the Desktop of the Developer VM:
 
 * https://github.com/tknerr/yocto-developer-vm/blob/master/roles/readme/files/README.md
 
 
-## Development
+## Building and Packaging the VM
 
 ### Prerequisites
 
-You only need [VirtualBox](http://virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/)
+You only need [VMware Workstation](https://www.vmware.com/products/workstation-pro.html) / [VirtualBox](http://virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/)
 installed.
 
 All other requirements, including Ansible will be installed *inside the Vagrant VM* during provisioning, i.e. you don't need them installed on your host machine.
 
-### Basic Development Workflow
+### Building
 
 Bring up the developer VM:
 ```
@@ -136,19 +136,33 @@ First, unmount the /vagrant shared folder:
 $ vagrant ssh -c "sudo umount /vagrant -f"
 ```
 
-Finally, shutdown the VM, remove the sharedfolder, and export the VM as an .ova file:
+Then remove the vagrant user account:
+```
+$ vagrant ssh -c "sudo pkill -KILL -u vagrant"
+$ vagrant ssh -c "sudo userdel -f -r vagrant"
+```
+
+Finally, shutdown the VM, remove the sharedfolder, and export the VM as an .ova file
+
+For VirtualBox:
 ```
 $ vagrant halt
-$ VBoxManage sharedfolder remove "Linux Developer VM" --name "vagrant"
-$ VBoxManage modifyvm "Linux Developer VM" --name "Linux Developer VM v0.1.0"
-$ VBoxManage export "Linux Developer VM v0.1.0" --output "linux-developer-vm-v0.1.0.ova" --options manifest,nomacs
+$ VBoxManage sharedfolder remove "Yocto Developer VM" --name "vagrant"
+$ VBoxManage modifyvm "Yocto Developer VM" --name "Yocto Developer VM v0.1.0"
+$ VBoxManage export "Yocto Developer VM v0.1.0" --output "yocto-developer-vm-v0.1.0.ova" --options manifest,nomacs
+```
+
+For VMware:
+```
+$ vagrant halt
+$ VMX_FILE=`cat .vagrant/machines/default/vmware_desktop/id`
+$ ovftool --name="Yocto Developer VM v0.1.0" "$VMX_FILE" yocto-developer-vm-v0.1.0.ova
 ```
 
 Don't forget to throw away the VM when you are done:
 ```
 $ vagrant destroy -f
 ```
-
 
 ## Contributing
 
