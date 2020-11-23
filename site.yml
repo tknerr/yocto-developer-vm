@@ -9,10 +9,12 @@
 
 - hosts: localhost
   roles:
+    # generic developer VM stuff
     - { role: desktop, tags: "desktop" }
     - { role: readme, tags: "readme" }
     - { role: ansible-lint, tags: "ansible-lint" }
     - { role: testinfra, tags: "testinfra" }
-    - { role: lab-setup, tags: "lab-setup" }
+    # yocto workshop toolchain
+    - { role: toolchain, tags: "toolchain" }
     - { role: vscode, tags: "vscode" }
     - { role: picocom, tags: "picocom" }

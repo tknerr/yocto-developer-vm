@@ -9,6 +9,7 @@ import pytest
     'gawk',
     'git',
     'python3',
+    'python3-distutils',
     'texinfo',
     'wget',
     'vim'
