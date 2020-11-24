@@ -27,6 +27,8 @@ sudo mount /dev/sdc2 /media/$USER/rootfs
 # overwrite the rootfs
 sudo rm -rf /media/$USER/rootfs/**
 sudo tar xpf ~/yocto-labs/build/tmp/deploy/images/beaglebone/core-image-minimal-beaglebone.tar.xz -C /media/$USER/rootfs
+
+# write caches to disk
 sudo sync
 
 # unmount the SD card
