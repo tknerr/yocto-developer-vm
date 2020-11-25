@@ -96,3 +96,18 @@ Poky (Yocto Project Reference Distro) 3.1.4 zuehlkelabs /dev/ttyS0
 zuehlkelabs login: root
 root@zuehlkelabs:~# 
 ```
+
+## Lab 6 - Change TUNE configuration to Cortext A8
+
+As suggested in the last part of the lab, let's change the tuning configuration to "cortexa8thf-neon" processor.
+
+In `meta-zuehlkelabs/conf/machine/zuehlkelabs.conf` change the default tune to "cortexa8thf-neon":
+```
+...
+DEFAULT_TUNE = "cortexa8thf-neon"
+...
+```
+
+Then run `bitbake core-image-minial` again to re-create the image
+
+NOTE: this will take a long time, as everything needs to be rebuilt from scratch in a separate `build/tmp/work/cortexa8t2hf-neon-poky-linux-gnueabi/` subdirectory
