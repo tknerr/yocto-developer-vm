@@ -20,3 +20,7 @@ Lab notes (Day 3):
 
  * [LAB-07](./LAB-07.md) - Create a custom image
  * [LAB-08](./LAB-08.md) - Develop your application in the Poky SDK
+
+The custom "meta-zuehlelabs" layer created during the workshop is available here:
+
+https://github.com/tknerr/yocto-meta-zuehlkelabs
