@@ -1,5 +1,5 @@
 
-# Yocto Training Notes 2020-11-23
+# Lab 3: Create a Yocto layer
 
 ## Lab 3 - Creating a Custom Layer
 

@@ -1,5 +1,5 @@
 
-# Yocto Training Notes 2020-11-23
+# Lab 1: First Yocto Project build
 
 ## Lab 1 - Lab Setup
 

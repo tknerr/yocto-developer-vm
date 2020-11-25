@@ -1,4 +1,4 @@
-# Yocto Training Notes 2020-11-24
+# Lab 5: Extend a recipe
 
 ## Lab 5 - Overview
 

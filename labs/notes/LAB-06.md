@@ -1,4 +1,4 @@
-# Yocto Training Notes 2020-11-24
+# Lab 6: Create a custom machine configuration
 
 ## Lab 6 - Create a Custom Machine
 

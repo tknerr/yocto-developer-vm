@@ -1,4 +1,4 @@
-# Yocto Training Notes 2020-11-25
+# Lab 8: Develop your application in the Poky SDK
 
 ## Lab 8 - Create an App Development SDK for our Image
 

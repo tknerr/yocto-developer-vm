@@ -1,5 +1,5 @@
 
-# Yocto Training Notes 2020-11-23
+# Lab 2: Advanced Yocto configuration
 
 ## Lab 2 - Add Packages to the RootFS
 

@@ -1,5 +1,5 @@
 
-# Yocto Training Notes 2020-11-24
+# Lab 4: Add a custom application
 
 ## Lab 4 - Overview
 

@@ -1,4 +1,4 @@
-# Yocto Training Notes 2020-11-25
+# Lab 7: Create a custom image
 
 ## Lab 7 - Create a Custom Image
 
