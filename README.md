@@ -54,7 +54,7 @@ You can run these commands from anywhere inside the developer VM:
 
 For general instructions, please refer to the README.md that is placed on the Desktop of the Developer VM:
 
-* https://github.com/tknerr/yocto-developer-vm/blob/master/roles/readme/files/README.md
+* [roles/readme/files/README.md](./roles/readme/files/README.md)
 
 
 ## Building and Packaging the VM
